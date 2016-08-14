@@ -95,13 +95,13 @@ function bubbleChart() {
     // working with data.
     var myNodes = rawData.map(function (d) {
       return {
-        id: d.id,
-        radius: radiusScale(+d.total_amount),
-        value: d.total_amount,
-        name: d.grant_title,
-        org: d.organization,
-        group: d.group,
-        year: d.start_year,
+        id: d.provider_id,
+        radius: radiusScale(+d.Average_Estimated_Submitted_Charges),
+        value: d.Average_Estimated_Submitted_Charges,
+        name: d.Provider_City,
+        org: d.Provider_State,
+        group: d.Provider_State,
+        year: d.Provider_State,
         x: Math.random() * 900,
         y: Math.random() * 800
       };
@@ -127,10 +127,10 @@ function bubbleChart() {
    * a d3 loading function like d3.csv.
    */
   var chart = function chart(selector, rawData) {
-    // Use the max total_amount in the data as the max in the scale's domain
-    // note we have to ensure the total_amount is a number by converting it
+    // Use the max Average_Estimated_Submitted_Charges in the data as the max in the scale's domain
+    // note we have to ensure the Average_Estimated_Submitted_Charges is a number by converting it
     // with `+`.
-    var maxAmount = d3.max(rawData, function (d) { return +d.total_amount; });
+    var maxAmount = d3.max(rawData, function (d) { return +d.Average_Estimated_Submitted_Charges; });
     radiusScale.domain([0, maxAmount]);
 
     nodes = createNodes(rawData);
@@ -146,7 +146,7 @@ function bubbleChart() {
 
     // Bind nodes data to what will become DOM elements to represent them.
     bubbles = svg.selectAll('.bubble')
-      .data(nodes, function (d) { return d.id; });
+      .data(nodes, function (d) { return d.provider_id; });
 
     // Create new circle elements each with class `bubble`.
     // There will be one circle.bubble for each object in the nodes array.
@@ -154,8 +154,8 @@ function bubbleChart() {
     bubbles.enter().append('circle')
       .classed('bubble', true)
       .attr('r', 0)
-      .attr('fill', function (d) { return fillColor(d.group); })
-      .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
+      .attr('fill', function (d) { return fillColor(d.Provider_State); })
+      .attr('stroke', function (d) { return d3.rgb(fillColor(d.Provider_State)).darker(); })
       .attr('stroke-width', 2)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
@@ -284,10 +284,10 @@ function bubbleChart() {
     d3.select(this).attr('stroke', 'black');
 
     var content = '<span class="name">Title: </span><span class="value">' +
-                  d.name +
+                  d.Provider_City + ", " + d.Provider_State +
                   '</span><br/>' +
                   '<span class="name">Amount: </span><span class="value">$' +
-                  addCommas(d.value) +
+                  addCommas(d.Average_Estimated_Submitted_Charges) +
                   '</span><br/>' +
                   '<span class="name">Year: </span><span class="value">' +
                   d.year +
@@ -301,7 +301,7 @@ function bubbleChart() {
   function hideDetail(d) {
     // reset outline
     d3.select(this)
-      .attr('stroke', d3.rgb(fillColor(d.group)).darker());
+      .attr('stroke', d3.rgb(fillColor(d.Provider_State)).darker());
 
     tooltip.hideTooltip();
   }
@@ -387,7 +387,7 @@ function addCommas(nStr) {
 }
 
 // Load the data.
-d3.csv('data/gates_money.csv', display);
+d3.csv('data/APC_Excision_2014.csv', display);
 
 // setup the buttons.
 setupButtons();
