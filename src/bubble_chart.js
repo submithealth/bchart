@@ -154,8 +154,8 @@ function bubbleChart() {
     bubbles.enter().append('circle')
       .classed('bubble', true)
       .attr('r', 0)
-      .attr('fill', function (d) { return fillColor(d.Provider_State); })
-      .attr('stroke', function (d) { return d3.rgb(fillColor(d.Provider_State)).darker(); })
+      .attr('fill', function (d) { return fillColor(d.group); })
+      .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
       .attr('stroke-width', 2)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
@@ -284,10 +284,10 @@ function bubbleChart() {
     d3.select(this).attr('stroke', 'black');
 
     var content = '<span class="name">Title: </span><span class="value">' +
-                  d.Provider_City + ", " + d.Provider_State +
+                  d.Provider_City + ", " + d.name +
                   '</span><br/>' +
                   '<span class="name">Amount: </span><span class="value">$' +
-                  addCommas(d.Average_Estimated_Submitted_Charges) +
+                  addCommas(d.value) +
                   '</span><br/>' +
                   '<span class="name">Year: </span><span class="value">' +
                   d.year +
@@ -301,7 +301,7 @@ function bubbleChart() {
   function hideDetail(d) {
     // reset outline
     d3.select(this)
-      .attr('stroke', d3.rgb(fillColor(d.Provider_State)).darker());
+      .attr('stroke', d3.rgb(fillColor(d.group)).darker());
 
     tooltip.hideTooltip();
   }
@@ -391,3 +391,4 @@ d3.csv('data/APC_Excision_2014.csv', display);
 
 // setup the buttons.
 setupButtons();
+
