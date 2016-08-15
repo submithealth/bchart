@@ -131,7 +131,7 @@ function bubbleChart() {
     // note we have to ensure the Average_Estimated_Submitted_Charges is a number by converting it
     // with `+`.
     var maxAmount = d3.max(rawData, function (d) { return +d.Average_Estimated_Submitted_Charges; });
-	var maxRad = maxAmount/4;
+	var maxRad = maxAmount*4;
     radiusScale.domain([0, maxRad]);
 
     nodes = createNodes(rawData);
