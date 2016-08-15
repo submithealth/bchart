@@ -52,7 +52,7 @@ function bubbleChart() {
   // Dividing by 8 scales down the charge to be
   // appropriate for the visualization dimensions.
   function charge(d) {
-    return -Math.pow(d.radius, 2.0) / 15;
+    return -Math.pow(d.radius, 2.0) / 8;
   }
 
   // Here we create a force layout and
@@ -130,7 +130,7 @@ function bubbleChart() {
     // Use the max Average_Estimated_Submitted_Charges in the data as the max in the scale's domain
     // note we have to ensure the Average_Estimated_Submitted_Charges is a number by converting it
     // with `+`.
-    var maxAmount = d3.max(rawData, function (d) { return +d.Average_Estimated_Submitted_Charges; });
+    var maxAmount = d3.max(rawData, function (d) { return +d.Average_Estimated_Submitted_Charges/2; });
     radiusScale.domain([0, maxAmount]);
 
     nodes = createNodes(rawData);
