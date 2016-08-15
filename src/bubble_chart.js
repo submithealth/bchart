@@ -95,7 +95,7 @@ function bubbleChart() {
     // working with data.
     var myNodes = rawData.map(function (d) {
       return {
-        id: d.provider_id,
+        id: d.id,
         radius: radiusScale(+d.Average_Estimated_Submitted_Charges),
         value: d.Average_Estimated_Submitted_Charges,
         name: d.Provider_City,
@@ -146,7 +146,7 @@ function bubbleChart() {
 
     // Bind nodes data to what will become DOM elements to represent them.
     bubbles = svg.selectAll('.bubble')
-      .data(nodes, function (d) { return d.provider_id; });
+      .data(nodes, function (d) { return d.id; });
 
     // Create new circle elements each with class `bubble`.
     // There will be one circle.bubble for each object in the nodes array.
