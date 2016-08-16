@@ -73,10 +73,9 @@ function bubbleChart() {
     .range(['#d84b2a', '#beccae', '#7aa25c']);
 
   // Sizes bubbles based on their area instead of raw radius
-  var maxAmount = d3.max(rawData, function (d) { return +d.Average_Total_Payments; });
   var radiusScale = d3.scale.pow()
     .exponent(0.5)
-    .range([2, maxAmount]);
+    .range([2, 500]);
 
   /*
    * This data manipulation function takes the raw data from
