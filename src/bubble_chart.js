@@ -73,9 +73,10 @@ function bubbleChart() {
     .range(['#d84b2a', '#beccae', '#7aa25c']);
 
   // Sizes bubbles based on their area instead of raw radius
+  var maxAmount = d3.max(rawData, function (d) { return +d.Average_Total_Payments; });
   var radiusScale = d3.scale.pow()
     .exponent(0.5)
-    .range([2, 85]);
+    .range([2, maxAmount]);
 
   /*
    * This data manipulation function takes the raw data from
@@ -96,8 +97,8 @@ function bubbleChart() {
     var myNodes = rawData.map(function (d) {
       return {
         id: d.id,
-        radius: radiusScale(+d.Outpatient_Services),
-        value: d.Outpatient_Services,
+        radius: radiusScale(+d.Average_Total_Payments),
+        value: d.Average_Total_Payments,
         name: d.Provider_City,
         org: d.Provider_State,
         group: d.Provider_State,
@@ -127,12 +128,11 @@ function bubbleChart() {
    * a d3 loading function like d3.csv.
    */
   var chart = function chart(selector, rawData) {
-    // Use the max Outpatient_Services in the data as the max in the scale's domain
-    // note we have to ensure the Outpatient_Services is a number by converting it
+    // Use the max Average_Total_Payments in the data as the max in the scale's domain
+    // note we have to ensure the Average_Total_Payments is a number by converting it
     // with `+`.
-    var maxAmount = d3.max(rawData, function (d) { return +d.Outpatient_Services; });
-	var maxRad = maxAmount*4;
-    radiusScale.domain([0, maxRad]);
+    var maxAmount = d3.max(rawData, function (d) { return +d.Average_Total_Payments; });
+    radiusScale.domain([0, maxAmount]);
 
     nodes = createNodes(rawData);
     // Set the force's nodes to our newly created nodes array.
