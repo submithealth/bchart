@@ -99,8 +99,8 @@ function bubbleChart() {
         radius: radiusScale(+d.Average_Estimated_Submitted_Charges),
         value: d.Average_Estimated_Submitted_Charges,
         name: d.Provider_City,
-        org: d.Provider_State,
-        group: d.Outpatient_Services,
+        org: d.Outpatient_Services,
+        group: d.Provider_State,
         year: d.Provider_State,
         x: Math.random() * 900,
         y: Math.random() * 800
@@ -290,7 +290,7 @@ function bubbleChart() {
                   addCommas(d.value) +
                   '</span><br/>' +
                   '<span class="name">Services Performed: </span><span class="value">' +
-                  d.group +
+                  d.year +
                   '</span>';
     tooltip.showTooltip(content, d3.event);
   }
