@@ -284,13 +284,13 @@ function bubbleChart() {
     d3.select(this).attr('stroke', 'black');
 
     var content = '<span class="name">Provider Location: </span><span class="value">' +
-                  d.name + ", " + d.org +
+                  d.name + ", " + d.year +
                   '</span><br/>' +
                   '<span class="name">Amount Charged: </span><span class="value">$' +
                   addCommas(d.value) +
                   '</span><br/>' +
                   '<span class="name">Services Performed: </span><span class="value">' +
-                  d.year +
+                  d.org +
                   '</span>';
     tooltip.showTooltip(content, d3.event);
   }
