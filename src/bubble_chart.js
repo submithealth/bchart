@@ -96,8 +96,8 @@ function bubbleChart() {
     var myNodes = rawData.map(function (d) {
       return {
         id: d.id,
-        radius: radiusScale(+d.Average_Estimated_Submitted_Charges),
-        value: d.Average_Estimated_Submitted_Charges,
+        radius: radiusScale(+d.Outpatient_Services),
+        value: d.Outpatient_Services,
         name: d.Provider_City,
         org: d.Provider_State,
         group: d.Provider_State,
@@ -127,10 +127,10 @@ function bubbleChart() {
    * a d3 loading function like d3.csv.
    */
   var chart = function chart(selector, rawData) {
-    // Use the max Average_Estimated_Submitted_Charges in the data as the max in the scale's domain
-    // note we have to ensure the Average_Estimated_Submitted_Charges is a number by converting it
+    // Use the max Outpatient_Services in the data as the max in the scale's domain
+    // note we have to ensure the Outpatient_Services is a number by converting it
     // with `+`.
-    var maxAmount = d3.max(rawData, function (d) { return +d.Average_Estimated_Submitted_Charges; });
+    var maxAmount = d3.max(rawData, function (d) { return +d.Outpatient_Services; });
     radiusScale.domain([0, maxAmount]);
 
     nodes = createNodes(rawData);
