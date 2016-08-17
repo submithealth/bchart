@@ -284,7 +284,7 @@ function bubbleChart() {
     d3.select(this).attr('stroke', 'black');
 
     var content = '<span class="name">Provider Location: </span><span class="value">' +
-                  d.name + ", " + d.group +
+                  d.name + ", " + d.org +
                   '</span><br/>' +
                   '<span class="name">Amount Charged: </span><span class="value">$' +
                   addCommas(d.value) +
