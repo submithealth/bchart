@@ -100,7 +100,7 @@ function bubbleChart() {
         value: d.Average_Estimated_Submitted_Charges,
         name: d.Provider_City,
         org: d.Provider_State,
-        group: d.Provider_State,
+        group: d.Outpatient_Services,
         year: d.Provider_State,
         x: Math.random() * 900,
         y: Math.random() * 800
@@ -283,14 +283,14 @@ function bubbleChart() {
     // change outline to indicate hover state.
     d3.select(this).attr('stroke', 'black');
 
-    var content = '<span class="name">Title: </span><span class="value">' +
+    var content = '<span class="name">Provider Location: </span><span class="value">' +
                   d.name + ", " + d.group +
                   '</span><br/>' +
-                  '<span class="name">Amount: </span><span class="value">$' +
+                  '<span class="name">Amount Charged: </span><span class="value">$' +
                   addCommas(d.value) +
                   '</span><br/>' +
-                  '<span class="name">Year: </span><span class="value">' +
-                  d.year +
+                  '<span class="name">Services Performed: </span><span class="value">' +
+                  d.group +
                   '</span>';
     tooltip.showTooltip(content, d3.event);
   }
