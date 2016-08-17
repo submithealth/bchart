@@ -243,7 +243,18 @@ function bubbleChart() {
    */
   function moveToYears(alpha) {
     return function (d) {
+
+      if (yearCenters[d.year]){
       var target = yearCenters[d.year];
+      } else {
+      var target = { x: width / 2, y: height / 2 };
+      }
+
+
+
+
+
+
       d.x = d.x + (target.x - d.x) * damper * alpha * 1.1;
       d.y = d.y + (target.y - d.y) * damper * alpha * 1.1;
     };
