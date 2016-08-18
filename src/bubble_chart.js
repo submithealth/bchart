@@ -34,6 +34,14 @@ function bubbleChart() {
     NY: width - 160
  };
 
+  // Y locations of the year titles.
+  var yearsTitleY = {
+    CA: 40,
+    IL: 80,
+    FL: 40,
+    NY: 80
+ };
+
   // Used when setting up force and
   // moving around nodes
   var damper = 0.102;
@@ -281,7 +289,7 @@ function bubbleChart() {
     years.enter().append('text')
       .attr('class', 'year')
       .attr('x', function (d) { return yearsTitleX[d]; })
-      .attr('y', 40)
+      .attr('y', function (d) { return yearsTitleY[d]; })
       .attr('text-anchor', 'middle')
       .text(function (d) { return d; });
   }
