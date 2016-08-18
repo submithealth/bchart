@@ -21,8 +21,8 @@ function bubbleChart() {
 
   var yearCenters = {
     CA: { x: width / 3, y: height / 3 }, // { x: width / 3, y: height / 2 },
-    IL: { x: width / 3, y: 2 * height / 3 } // { x: width / 2, y: height / 2 },
-    FL: { x: 2 * width / 3, y: height / 3 } // { x: 2 * width / 3, y: height / 2 },
+    IL: { x: width / 3, y: 2 * height / 3 }, // { x: width / 2, y: height / 2 },
+    FL: { x: 2 * width / 3, y: height / 3 }, // { x: 2 * width / 3, y: height / 2 },
     NY: { x: 2 * width / 3, y: 2 * height / 3 }
   };
 
