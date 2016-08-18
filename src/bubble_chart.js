@@ -166,6 +166,7 @@ function bubbleChart() {
       .attr('fill', function (d) { return fillColor(d.group); })
       .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
       .attr('stroke-width', 1)
+      .attr('style', '{opacity: .7;}')
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
 
