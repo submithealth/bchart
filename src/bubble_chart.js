@@ -151,9 +151,9 @@ function bubbleChart() {
     svg = d3.select(selector)
       .append('svg')
       .attr('width', width)
-      .attr('height', height);
-      //.attr('viewBox', '0 0 940 600')
-      //.attr('preserveAspectRatio', 'xMidYMid meet');
+      .attr('height', height)
+      .attr('viewBox', '0 0 940 600')
+      .attr('preserveAspectRatio', 'xMidYMid meet');
 
     // Bind nodes data to what will become DOM elements to represent them.
     bubbles = svg.selectAll('.bubble')
@@ -168,7 +168,7 @@ function bubbleChart() {
       .attr('fill', function (d) { return fillColor(d.group); })
       .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
       .attr('stroke-width', 1)
-      .style('opacity','.7');
+      .style('opacity','.7')
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
 
