@@ -37,9 +37,9 @@ function bubbleChart() {
   // Y locations of the year titles.
   var yearsTitleY = {
     CA: 40,
-    IL: 80,
+    IL: 400,
     FL: 40,
-    NY: 80
+    NY: 400
  };
 
   // Used when setting up force and
@@ -109,7 +109,7 @@ function bubbleChart() {
         value: d.Average_Estimated_Submitted_Charges,
         name: d.Provider_City,
         org: d.Outpatient_Services,
-        group: d.Provider_State,
+        group: d.Provider_City,
         year: d.Provider_State,
         x: Math.random() * 900,
         y: Math.random() * 800
@@ -258,10 +258,6 @@ function bubbleChart() {
       } else {
       var target = { x: width / 2, y: height / 2 };
       }
-
-
-
-
 
 
       d.x = d.x + (target.x - d.x) * damper * alpha * 1.1;
