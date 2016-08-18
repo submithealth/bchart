@@ -151,7 +151,9 @@ function bubbleChart() {
     svg = d3.select(selector)
       .append('svg')
       .attr('width', width)
-      .attr('height', height);
+      .attr('height', height)
+      .attr('viewBox', '0 0 940 600')
+      .attr('preserveAspectRatio', 'xMidYMid meet');
 
     // Bind nodes data to what will become DOM elements to represent them.
     bubbles = svg.selectAll('.bubble')
