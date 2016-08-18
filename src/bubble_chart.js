@@ -20,26 +20,26 @@ function bubbleChart() {
   var center = { x: width / 2, y: height / 2 };
 
   var yearCenters = {
-    CA: { x: width / 3, y: height / 3 }, // { x: width / 3, y: height / 2 },
-    IL: { x: width / 3, y: 2 * height / 3 }, // { x: width / 2, y: height / 2 },
-    FL: { x: 2 * width / 3, y: height / 3 }, // { x: 2 * width / 3, y: height / 2 },
-    NY: { x: 2 * width / 3, y: 2 * height / 3 }
+    NY: { x: width / 3, y: height / 3 }, // { x: width / 3, y: height / 2 },
+    MA: { x: width / 3, y: 2 * height / 3 }, // { x: width / 2, y: height / 2 },
+    MI: { x: 2 * width / 3, y: height / 3 }, // { x: 2 * width / 3, y: height / 2 },
+    PA: { x: 2 * width / 3, y: 2 * height / 3 }
   };
 
   // X locations of the year titles.
   var yearsTitleX = {
-    CA: 160,
-    IL: 160,  // width / 2,
-    FL: width - 160,
-    NY: width - 160
+    NY: 160,
+    MA: 160,  // width / 2,
+    MI: width - 160,
+    PA: width - 160
  };
 
   // Y locations of the year titles.
   var yearsTitleY = {
-    CA: 40,
-    IL: 400,
-    FL: 40,
-    NY: 400
+    NY: 40,
+    MA: 400,
+    MI: 40,
+    PA: 400
  };
 
   // Used when setting up force and
