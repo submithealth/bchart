@@ -1,5 +1,4 @@
 
-
 /* bubbleChart creation function. Returns a function that will
  * instantiate a new bubble chart given a DOM element to display
  * it in and a dataset to visualize.
@@ -21,17 +20,19 @@ function bubbleChart() {
   var center = { x: width / 2, y: height / 2 };
 
   var yearCenters = {
-    CA: { x: width / 3, y: height / 2 },
-    2009: { x: width / 2, y: height / 2 },
-    2010: { x: 2 * width / 3, y: height / 2 }
+    CA: { x: width / 3, y: height / 3 }, // { x: width / 3, y: height / 2 },
+    IL: { x: width / 3, y: 2 * height / 3 } // { x: width / 2, y: height / 2 },
+    FL: { x: 2 * width / 3, y: height / 3 } // { x: 2 * width / 3, y: height / 2 },
+    NY: { x: 2 * width / 3, y: 2 * height / 3 }
   };
 
   // X locations of the year titles.
   var yearsTitleX = {
     CA: 160,
-    2009: width / 2,
-    2010: width - 160
-  };
+    IL: 160,  // width / 2,
+    FL: width - 160,
+    NY: width - 160
+ };
 
   // Used when setting up force and
   // moving around nodes
