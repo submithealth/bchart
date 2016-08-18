@@ -21,24 +21,24 @@ function bubbleChart() {
 
   var yearCenters = {
     WA: { x: width / 3, y: height / 3 }, // { x: width / 3, y: height / 2 },
-    NY: { x: width / 3, y: 2 * height / 3 }, // { x: width / 2, y: height / 2 },
-    CA: { x: 2 * width / 3, y: height / 3 }, // { x: 2 * width / 3, y: height / 2 },
+    CA: { x: width / 3, y: 2 * height / 3 }, // { x: width / 2, y: height / 2 },
+    NY: { x: 2 * width / 3, y: height / 3 }, // { x: 2 * width / 3, y: height / 2 },
     FL: { x: 2 * width / 3, y: 2 * height / 3 }
   };
 
   // X locations of the year titles.
   var yearsTitleX = {
     WA: 160,
-    NY: 160,  // width / 2,
-    CA: width - 160,
+    CA: 160,  // width / 2,
+    NY: width - 160,
     FL: width - 160
  };
 
   // Y locations of the year titles.
   var yearsTitleY = {
     WA: 40,
-    NY: 400,
-    CA: 40,
+    CA: 400,
+    NY: 40,
     FL: 400
  };
 
