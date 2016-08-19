@@ -306,7 +306,7 @@ function bubbleChart() {
                   d.name + ", " + d.year +
                   '</span><br/>' +
                   '<span class="name">Amount Charged: </span><span class="value">$' +
-                  addCommas(d.value) +
+                  addCommas(parseFloat(Math.round(d.value * 100) / 100).toFixed(2)) +
                   '</span><br/>' +
                   '<span class="name">Services Performed: </span><span class="value">' +
                   d.org +
