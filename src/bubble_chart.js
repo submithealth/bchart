@@ -9,8 +9,8 @@
  */
 function bubbleChart() {
   // Constants for sizing
-  var width = 940;
-  var height = 600;
+  var width = 725;
+  var height = 463;
 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('sh_tooltip', 240);
@@ -28,10 +28,10 @@ function bubbleChart() {
 
   // X locations of the year titles.
   var yearsTitleX = {
-    WA: 160,
-    CA: 160,  // width / 2,
-    NY: width - 160,
-    FL: width - 160
+    WA: 123,
+    CA: 123,  // width / 2,
+    NY: width - 123,
+    FL: width - 123
  };
 
   // Y locations of the year titles.
