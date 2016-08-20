@@ -10,7 +10,7 @@
 function bubbleChart() {
   // Constants for sizing
   var width = 725;
-  var height = 463;
+  var height = 600;
 
   // tooltip for mouseover functionality
   var tooltip = floatingTooltip('sh_tooltip', 240);
@@ -152,7 +152,7 @@ function bubbleChart() {
       .append('svg')
       .attr('width', width)
       .attr('height', height)
-      .attr('viewBox', '0 0 725 463')
+      .attr('viewBox', '0 0 725 600')
       .attr('preserveAspectRatio', 'xMidYMid meet');
 
     // Bind nodes data to what will become DOM elements to represent them.
