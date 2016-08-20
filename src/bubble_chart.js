@@ -152,7 +152,7 @@ function bubbleChart() {
       .append('svg')
       .attr('width', width)
       .attr('height', height)
-      .attr('viewBox', '0 0 940 600')
+      .attr('viewBox', '0 0 725 463')
       .attr('preserveAspectRatio', 'xMidYMid meet');
 
     // Bind nodes data to what will become DOM elements to represent them.
